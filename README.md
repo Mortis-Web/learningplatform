@@ -31,10 +31,16 @@ The UI is currently under development.
 - API response includes:
   ```json
   {
-    "name": "kharshouf",
-    "profile_image_url": null,
-    "enrolled subjects": [],
-    "progress": {
+    "name": "Student Name",
+  "profile_image_url": "https://example.com/image.jpg",
+  "enrolled_subjects": [
+    {
+      "id": 1,
+      "name": "Math",
+      "view_lessons_link": "https://example.com/api/subject/lessons/1"
+    }
+  ],
+      "progress": {
       "lessons_completed": 0,
       "total_lessons": 0,
       "badges_earned": 0,
