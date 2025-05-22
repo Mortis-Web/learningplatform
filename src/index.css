@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+@import "tailwindcss";
+
+@theme{
+    --bg:#F8FAFF;
+    --font:"Baloo 2", cursive	;
+    --ButtonColor:#1847AE;
+    --red:#D15357;
+    --white:#FFFFFF;
+    --black:#000000;
+    --container:90%;
+    --SecMt:2rem;
+    /* --ChampShadow:0px -15px 0px -1px #608BE9; */
+    --Shadow:0 0px 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+
+
+@layer base{
+    body{
+        @apply font-[var(--font)] bg-[#F8FAFF]
+    }
+    p,h1,h2,h3,h4,h5,h6{
+        @apply max-w-[55ch] text-balance
+    }
+    a,button{
+        @apply cursor-pointer
+    }
+   
+}
