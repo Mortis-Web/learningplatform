@@ -1,7 +1,7 @@
 import React from 'react'
-import happy from "../../assets/Vector (2).png"
-import page from "../../assets/Vector (4).png"
-import book from "../../assets/Vector (5).png"
+import happy from "../../assets/images/Vector (2).png"
+import page from "../../assets/images/Vector (4).png"
+import book from "../../assets/images/Vector (5).png"
 
 const Statis = () => {
   return (

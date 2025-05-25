@@ -1,7 +1,7 @@
 import React from 'react'
-import list from "../../assets/Vector (6).png"
-import grid from "../../assets/Vector (7).png"
-import arrow from "../../assets/Vector (8).png"
+import list from "../../assets/images/Vector (6).png"
+import grid from "../../assets/images/Vector (7).png"
+import arrow from "../../assets/images/Vector (8).png"
 
 
 const Tools = () => {

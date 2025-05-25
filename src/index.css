@@ -1,30 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
 @import "tailwindcss";
+
+@font-face {
+  font-family: Baloo ;
+  src: url('assets/fonts/Baloo2-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: champ;
+  src: url('assets/fonts/Oswald-VariableFont_wght.ttf');
+}
 
 @theme{
     --bg:#F8FAFF;
-    --font:"Baloo 2", cursive	;
+    --font:'Baloo';
     --ButtonColor:#1847AE;
     --red:#D15357;
     --white:#FFFFFF;
     --black:#000000;
     --container:90%;
     --SecMt:2rem;
-    /* --ChampShadow:0px -15px 0px -1px #608BE9; */
-    --Shadow:0 0px 2px 0 rgba(0, 0, 0, 0.35);
+    --Shadow:0 0px 2px 0 rgba(0, 0, 0, 0.5);
+    --clip: polygon(14% 76%, 86% 76%, 100% 100%, 0% 100%);
+    --LineHeight : 2
 }
 
+.clip{
+    clip-path: var(--clip);
+    font-family: champ;
 
+}
+ 
+@layer base {
+  body {
+    @apply bg-[#F8FAFF];
+    font-family: var(--font), sans-serif;
+  }
 
-@layer base{
-    body{
-        @apply font-[var(--font)] bg-[#F8FAFF]
-    }
-    p,h1,h2,h3,h4,h5,h6{
-        @apply max-w-[55ch] text-balance
-    }
-    a,button{
-        @apply cursor-pointer
-    }
-   
+  p, h1, h2, h3, h4, h5, h6 {
+    @apply max-w-[55ch] text-balance;
+  }
+
+  a, button {
+    @apply cursor-pointer;
+  }
+
 }

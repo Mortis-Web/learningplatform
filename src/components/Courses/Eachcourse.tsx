@@ -1,5 +1,5 @@
 import React from 'react'
-import book from "../../assets/Vector (10).png"
+import book from "../../assets/images/Vector (10).png"
 const Eachcourse = () => {
   return (
         <article className='bg-white rounded-2xl p-4 shadow-[var(--Shadow)] space-y-4'>

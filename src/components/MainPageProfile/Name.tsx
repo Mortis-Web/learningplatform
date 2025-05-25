@@ -1,5 +1,5 @@
 import React from 'react'
-import img from "../../assets/I hope your day.png"
+import img from "../../assets/images/I hope your day.png"
 
 const Name = () => {
   return (
