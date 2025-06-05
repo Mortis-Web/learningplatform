@@ -1,7 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @font-face {
-  font-family: Baloo ;
+  font-family: Baloo;
   src: url('assets/fonts/Baloo2-VariableFont_wght.ttf');
 }
 
@@ -10,38 +10,136 @@
   src: url('assets/fonts/Oswald-VariableFont_wght.ttf');
 }
 
-@theme{
-    --bg:#F8FAFF;
-    --font:'Baloo';
-    --ButtonColor:#1847AE;
-    --red:#D15357;
-    --white:#FFFFFF;
-    --black:#000000;
-    --container:90%;
-    --SecMt:2rem;
-    --Shadow:0 0px 2px 0 rgba(0, 0, 0, 0.5);
-    --clip: polygon(14% 76%, 86% 76%, 100% 100%, 0% 100%);
-    --LineHeight : 2
+@theme {
+  --breakpoins-xs: 480px;
+  --bg: #f8faff;
+  --font: 'Baloo';
+  --ChampFont: 'champ';
+  --ButtonColor: #1847ae;
+  --red: #d15357;
+  --white: #ffffff;
+  --black: #000000;
+  --container: 90%;
+  --SecMt: 2rem;
+  --Shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.45);
+  --clip: polygon(15% 75%, 85% 75%, 100% 100%, 0% 100%);
+  --Glide: linear(
+    0,
+    0.012 0.9%,
+    0.049 2%,
+    0.409 9.3%,
+    0.513 11.9%,
+    0.606 14.7%,
+    0.691 17.9%,
+    0.762 21.3%,
+    0.82 25%,
+    0.868 29.1%,
+    0.907 33.6%,
+    0.937 38.7%,
+    0.976 51.3%,
+    0.994 68.8%,
+    1
+  );
 }
 
-.clip{
-    clip-path: var(--clip);
-    font-family: champ;
-
+@utility clip {
+  clip-path: var(--clip);
+  /* font-family: 'Graphik Trial', sans-serif; */
 }
- 
+.three {
+  --clip: polygon(0 75%, 80% 75%, 100% 100%, 0% 100%);
+}
+.two {
+  --clip: polygon(25% 75%, 100% 75%, 100% 100%, 0% 100%);
+}
+
 @layer base {
+  ::-webkit-scrollbar {
+    @apply w-4;
+  }
+  ::-webkit-scrollbar-track {
+    @apply my-4 rounded-full bg-black/10;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-[var(--ButtonColor)];
+  }
   body {
     @apply bg-[#F8FAFF];
-    font-family: var(--font), sans-serif;
+    /* font-family: var(--font), 'Graphik Trial'; */
+    font-family: 'Graphik Trial', sans-serif;
   }
 
-  p, h1, h2, h3, h4, h5, h6 {
-    @apply max-w-[55ch] text-balance;
+  *,
+  *::after,
+  *::before {
+    @apply box-border;
   }
 
-  a, button {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply max-w-[65ch];
+  }
+  a,
+  button {
     @apply cursor-pointer;
   }
 
+  a,
+  button,
+  input {
+    @apply outline-1 outline-transparent select-none focus:border-0;
+  }
+
+  input:invalid:placeholder-shown:focus {
+    @apply outline-red-500;
+  }
+  input:invalid:not(:placeholder-shown):focus {
+    @apply outline-yellow-500;
+  }
+
+  input:valid:not(:placeholder-shown):focus {
+    @apply outline-green-500;
+  }
+  input:user-valid:not(:focus) {
+    @apply bg-blue-100;
+  }
+  input:user-invalid:not(:focus) {
+    @apply bg-red-100;
+  }
+
+  label {
+    @apply max-w-fit select-none;
+  }
 }
+
+@layer components {
+  .react-datepicker__month-dropdown-container,
+  .react-datepicker__year-dropdown-container {
+    @apply rounded-lg bg-white px-5 py-1 text-sm font-semibold shadow-[var(--Shadow)] focus:border-none focus:outline-none;
+  }
+
+  .react-datepicker__header__dropdown {
+    @apply my-2;
+  }
+  .react-datepicker {
+    @apply z-50 select-none;
+  }
+  .react-datepicker__year-option,
+  .react-datepicker__month-option {
+    @apply cursor-pointer px-4 py-2 hover:bg-blue-200;
+  }
+}
+
+@media (width <= theme(--breakpoins-xs)) {
+}
+
+/* 480px for phones MEDIA xs?? */
+/* @utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+} */

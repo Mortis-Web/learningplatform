@@ -1,25 +1,21 @@
-import React from 'react'
-import Champs from './Champs'
-import Lowerchamps from './Lowerchamps'
+import Champs from './Champs';
+import Lowerchamps from './Lowerchamps';
 
 const Testimonial = () => {
+  const fakeArray = Array(4).fill(null);
   return (
-        <div className='shadow-[var(--Shadow)] col-span-1 rounded-4xl py-9 px-6 bg-white max-h-fit '>
-          <h1 className='text-2xl font-semibold text-center pb-8'>لوحة المتصدرين</h1>
-          <Champs/>
-              <div className='bg-[#E1EBFF] w-full mt-[-90px] gap-4 grid rounded-4xl p-4 min-h-[400px] relative z-1'>
-          <Lowerchamps/>
-          <Lowerchamps/>
-          <Lowerchamps/>
-          <Lowerchamps/>
+    <div className="col-span-2 max-h-fit rounded-4xl bg-white shadow-[var(--Shadow)] lg:col-span-1">
+      <h1 className="pt-10 pb-18 text-center text-3xl font-bold">
+        لوحة المتصدرين
+      </h1>
+      <Champs />
+      <div className="relative z-1 mt-[-90px] grid min-h-[400px] w-full gap-4 rounded-4xl bg-[#E1EBFF] p-4">
+        {fakeArray.map((_, index) => (
+          <Lowerchamps key={index} index={index} points={500} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-
-              </div>
-
-
-        </div>
-
-  )
-}
-
-export default Testimonial
+export default Testimonial;
